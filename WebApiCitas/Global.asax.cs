@@ -11,6 +11,13 @@ namespace WebApiCitas
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
+        /// <summary>
+        /// Configures and initializes the application at startup.
+        /// </summary>
+        /// <remarks>This method is called automatically when the application starts. It registers areas, 
+        /// configures Web API routes, applies global filters, sets up route mappings, and bundles  resources such as
+        /// scripts and styles. Ensure that all configuration methods invoked  within this method are properly defined
+        /// to avoid runtime errors.</remarks>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

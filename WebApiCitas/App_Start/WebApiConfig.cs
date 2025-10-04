@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using WebApiCitas.Services;
 
 namespace WebApiCitas
 {
@@ -9,10 +7,10 @@ namespace WebApiCitas
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuración y servicios de Web API
-
-            // Rutas de Web API
+            // Configuración de rutas y servicios de API
             config.MapHttpAttributeRoutes();
+
+            config.MessageHandlers.Add(new TokenValidationHandler());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

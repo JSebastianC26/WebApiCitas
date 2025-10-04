@@ -6,7 +6,7 @@
 @model Collection<ApiDescription>
 
 @{
-    ViewBag.Title = "ASP.NET Web API Help Page";
+    ViewBag.Title = "Documentacion";
 
     // Group APIs by controller
     ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
@@ -16,7 +16,7 @@
 <header class="help-page">
     <div class="content-wrapper">
         <div class="float-left">
-            <h1>@ViewBag.Title</h1>
+            <h1>CITAS WEB - API REST - DOCUMENTACIÓN</h1>
         </div>
     </div>
 </header>
@@ -25,8 +25,12 @@
         <div class="content-wrapper">
             <h2>Introduction</h2>
             <p>
-                Provide a general description of your APIs here.
+                Esta aplicación implementa una arquitectura basada en microservicios,
+                desarrollada con ASP.NET Framework 4.6.2 y C#,
+                utilizando un orquestador central (AppointmentCoordinator)
+                que gestiona la comunicación entre los servicios de agenda, pacientes, médicos y notificaciones.
             </p>
+
         </div>
     </section>
     <section class="content-wrapper main-content clear-fix">
