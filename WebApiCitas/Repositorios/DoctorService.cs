@@ -1,10 +1,9 @@
 ﻿using Dapper;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using WebApiCitas.Interfaces;
 using WebApiCitas.Models;
 
@@ -21,7 +20,7 @@ namespace WebApiCitas.Repositorios
 
         public async Task<Doctor> GetDoctorById(int id)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 var sql = "SELECT * FROM Doctors WHERE Id = @Id";
                 return await connection.QueryFirstOrDefaultAsync<Doctor>(sql, new { Id = id });
@@ -30,7 +29,7 @@ namespace WebApiCitas.Repositorios
 
         public async Task<List<Doctor>> GetDoctors(string specialty)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 var sql = "SELECT * FROM Doctors";
 

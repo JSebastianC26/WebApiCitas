@@ -1,10 +1,9 @@
 ﻿using Dapper;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using WebApiCitas.Interfaces;
 using WebApiCitas.Models;
 
@@ -29,7 +28,7 @@ namespace WebApiCitas.Repositorios
             var existingAppointments = await _appointmentRepository
                 .GetAppointmentsByDoctor(doctorId, date);
 
-            // Verificar si hay conflicto de horario
+            // Verificar si hay conflicto de horario (citas con menos de 30 min de diferencia)
             var hasConflict = existingAppointments.Any(a =>
                 Math.Abs((a.AppointmentDate - date).TotalMinutes) < 30);
 
@@ -39,14 +38,13 @@ namespace WebApiCitas.Repositorios
         public async Task<bool> ReserveTimeSlot(int doctorId, DateTime date)
         {
             // Implementar lógica de reserva temporal
-            // Puede usar una tabla temporal o cache
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 var sql = @"
                     INSERT INTO TimeSlotReservations 
                         (DoctorId, ReservedDate, ReservedAt, ExpiresAt)
                     VALUES 
-                        (@DoctorId, @ReservedDate, GETDATE(), DATEADD(MINUTE, 15, GETDATE()))";
+                        (@DoctorId, @ReservedDate, NOW(), DATE_ADD(NOW(), INTERVAL 15 MINUTE))";
 
                 await connection.ExecuteAsync(sql, new { DoctorId = doctorId, ReservedDate = date });
                 return true;
@@ -55,7 +53,7 @@ namespace WebApiCitas.Repositorios
 
         public async Task ReleaseTimeSlot(int doctorId, DateTime date)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 var sql = @"
                     DELETE FROM TimeSlotReservations 

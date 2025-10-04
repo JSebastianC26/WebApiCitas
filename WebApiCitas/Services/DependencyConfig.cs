@@ -59,11 +59,17 @@ namespace WebApiCitas.Services
                 .InstancePerRequest();
 
             // ===== REGISTRAR MESSAGE BUS =====
-            var rabbitMQHost = ConfigurationManager.AppSettings["RabbitMQ:Host"] ?? "localhost";
+            //var rabbitMQHost = ConfigurationManager.AppSettings["RabbitMQ:Host"] ?? "localhost";
 
-            builder.RegisterType<RabbitMQMessageBus>()
+            //builder.RegisterType<RabbitMQMessageBus>()
+            //    .As<IMessageBus>()
+            //    .WithParameter("hostName", rabbitMQHost)
+            //    .SingleInstance();
+
+
+            // USAR MOCK EN SU LUGAR
+            builder.RegisterType<MockMessageBus>()
                 .As<IMessageBus>()
-                .WithParameter("hostName", rabbitMQHost)
                 .SingleInstance();
 
             // ===== REGISTRAR ORQUESTADOR =====

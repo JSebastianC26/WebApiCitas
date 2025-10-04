@@ -20,6 +20,11 @@ namespace WebApiCitas.Services
         private readonly IModel _channel;
         private readonly string _exchangeName = "medical_appointments_exchange";
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hostName"></param>
+        /// <exception cref="Exception"></exception>
         public RabbitMQMessageBus(string hostName = "localhost")
         {
             try
@@ -30,7 +35,7 @@ namespace WebApiCitas.Services
                     UserName = "guest",
                     Password = "guest",
                     VirtualHost = "/",
-                    Port = 5672
+                    Port = 44385
                 };
 
                 _connection = factory.CreateConnection();
@@ -99,6 +104,9 @@ namespace WebApiCitas.Services
             return routingKey;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
             _channel?.Close();
