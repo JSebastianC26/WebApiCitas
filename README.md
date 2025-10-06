@@ -133,7 +133,6 @@ El proyecto usa **Autofac** para inyección de dependencias. La configuración e
 ```
 App_Start/DependencyConfig.cs
 ```
----
 
 ## 💻 Uso
 
@@ -179,8 +178,6 @@ App_Start/DependencyConfig.cs
 ```bash
 curl -X PUT http://localhost:44385/api/appointments/cancel/15
 ```
-
----
 
 ## 🔌 API Endpoints
 
@@ -235,8 +232,6 @@ curl -X PUT http://localhost:44385/api/appointments/cancel/15
 
 ## 🧪 Casos de Prueba
 
-```
-
 ### Casos de Prueba Principales
 
 1. **CP-001**: Crear cita exitosamente
@@ -247,8 +242,6 @@ curl -X PUT http://localhost:44385/api/appointments/cancel/15
 6. **CP-006**: Cancelar cita exitosamente
 7. **CP-007**: Validación de campos requeridos
 
-Ver documentación completa en: `/Docs/CasosDePrueba.md`
-
 ---
 
 ### Guía de Estilo
@@ -258,11 +251,6 @@ Ver documentación completa en: `/Docs/CasosDePrueba.md`
 - Escribir pruebas unitarias para nuevas funcionalidades
 - Mantener cobertura de código > 80%
 
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 
@@ -272,7 +260,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 - GitHub: [@JSebastianC26](https://github.com/JSebastianC26)
 - LinkedIn: [johan-sebastian-cardona-figueroa](https://www.linkedin.com/in/johan-sebastian-cardona-figueroa-a42b131ab)
-- Email: jscardona026@gmai.com
+- Email: jscardona026@gmail.com
 
 ---
 
