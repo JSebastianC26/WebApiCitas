@@ -6,27 +6,6 @@ Sistema de gestión de citas médicas implementado con **Arquitectura Orientada 
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Status](https://img.shields.io/badge/status-active-success)]()
 
----
-
-## 📋 Tabla de Contenidos
-
-- [Descripción](#descripción)
-- [Arquitectura](#arquitectura)
-- [Características](#características)
-- [Tecnologías](#tecnologías)
-- [Requisitos Previos](#requisitos-previos)
-- [Instalación](#instalación)
-- [Configuración](#configuración)
-- [Uso](#uso)
-- [API Endpoints](#api-endpoints)
-- [Casos de Prueba](#casos-de-prueba)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Documentación](#documentación)
-- [Contribución](#contribución)
-- [Licencia](#licencia)
-- [Autor](#autor)
-
----
 
 ## 📖 Descripción
 
