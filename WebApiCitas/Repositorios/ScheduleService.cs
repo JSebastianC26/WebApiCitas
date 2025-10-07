@@ -13,6 +13,7 @@ namespace WebApiCitas.Repositorios
     {
         private readonly string _connectionString;
         private readonly IAppointmentRepository _appointmentRepository;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public ScheduleService(
             string connectionString,

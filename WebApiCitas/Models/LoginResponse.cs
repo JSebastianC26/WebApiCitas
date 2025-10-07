@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WebApiCitas.Models
+﻿namespace WebApiCitas.Models
 {
     /// <summary>
     /// Modelo que representa la respuesta de un login.

@@ -28,7 +28,15 @@ namespace WebApiCitas.Repositorios
                 <p><strong>Fecha y hora:</strong> {date:dd/MM/yyyy HH:mm}</p>
                 <p>Por favor llegue 10 minutos antes de su cita.</p>";
 
-            await _emailSender.SendEmailAsync(email, subject, body);
+            try
+            {
+                await _emailSender.SendEmailAsync(email, subject, body);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error enviando correo. " + ex.Message);
+            }
+            
         }
 
         public async Task SendCancellationNotification(

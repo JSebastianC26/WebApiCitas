@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace WebApiCitas.Interfaces
 {
@@ -11,6 +7,12 @@ namespace WebApiCitas.Interfaces
     /// </summary>
     public interface IMessageBus
     {
+        /// <summary>
+        /// Publicar un mensaje asincronamente.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="message"></param>
+        /// <returns></returns>
         Task PublishAsync<T>(T message) where T : class;
     }
 }

@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using WebApiCitas.Interfaces;
 using WebApiCitas.Models;
 
 namespace WebApiCitas.Controllers
 {
+    /// <summary>
+    /// Pacientes
+    /// </summary>
+    [Authorize]
     [RoutePrefix("api/patients")]
     public class PatientsController : ApiController
     {
         private readonly IPatientService _patientService;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="patientService"></param>
         public PatientsController(IPatientService patientService)
         {
             _patientService = patientService;

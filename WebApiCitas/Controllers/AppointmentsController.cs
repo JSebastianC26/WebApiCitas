@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using WebApiCitas.Interfaces;
@@ -10,11 +6,19 @@ using WebApiCitas.Models;
 
 namespace WebApiCitas.Controllers
 {
+    /// <summary>
+    /// Citas medicas
+    /// </summary>
+    [Authorize]
     [RoutePrefix("api/appointments")]
     public class AppointmentsController : ApiController
     {
         private readonly IScheduleService _scheduleService;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="scheduleService"></param>
         public AppointmentsController(IScheduleService scheduleService)
         {
             _scheduleService = scheduleService;

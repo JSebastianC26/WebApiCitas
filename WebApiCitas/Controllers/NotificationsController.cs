@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using WebApiCitas.Interfaces;
 using WebApiCitas.Models;
 
 namespace WebApiCitas.Controllers
 {
+    /// <summary>
+    /// Notificaciones
+    /// </summary>
+    [Authorize]
     [RoutePrefix("api/notifications")]
     public class NotificationsController : ApiController
     {
         private readonly INotificationService _notificationService;
 
+        /// <summary>
+        /// Contructor
+        /// </summary>
+        /// <param name="notificationService"></param>
         public NotificationsController(INotificationService notificationService)
         {
             _notificationService = notificationService;

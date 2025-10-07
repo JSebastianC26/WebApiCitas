@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Configuration;
+using System.Net;
 using System.Threading;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -59,7 +60,10 @@ namespace WebApiCitas.Controllers
                 return BadRequest();
             }
 
-            bool isCredentialValid = (plogin.Password == "123456" && plogin.Username == "USER"); // revisar metodo para validar credenciales ***** 
+            string passService = ConfigurationManager.AppSettings["passService"];
+            string userService = ConfigurationManager.AppSettings["userService"];
+
+            bool isCredentialValid = (plogin.Password == passService && plogin.Username == userService); // revisar metodo para validar credenciales ***** 
 
             if (isCredentialValid)
             {

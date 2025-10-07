@@ -9,6 +9,7 @@ namespace WebApiCitas.Repositorios
     public class PaymentService : IPaymentService
     {
         private readonly string _connectionString;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public PaymentService(string connectionString)
         {

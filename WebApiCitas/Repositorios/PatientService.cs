@@ -12,6 +12,7 @@ namespace WebApiCitas.Repositorios
     public class PatientService : IPatientService
     {
         private readonly string _connectionString;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public PatientService(string connectionString)
         {

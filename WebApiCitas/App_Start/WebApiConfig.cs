@@ -24,6 +24,7 @@ namespace WebApiCitas
             config.EnableCors();
 
             // ===== CONFIGURACIÓN DE RUTAS =====
+            config.MessageHandlers.Add(new TokenValidationHandler());
 
             // Habilitar attribute routing (para usar [Route])
             config.MapHttpAttributeRoutes();

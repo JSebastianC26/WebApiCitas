@@ -117,10 +117,15 @@ namespace WebApiCitas.Services
                 });
 
                 // PASO 6: Enviar notificaciones (async)
-                _ = _notificationService.SendAppointmentConfirmation(
+                await _notificationService.SendAppointmentConfirmation(
                     patient.Email,
                     doctor.Name,
                     request.AppointmentDate);
+
+                //_ = _notificationService.SendAppointmentConfirmation(
+                //    patient.Email,
+                //    doctor.Name,
+                //    request.AppointmentDate);
 
                 // PASO 7: Respuesta exitosa
                 result.Success = true;

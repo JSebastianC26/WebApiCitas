@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WebApiCitas.Models
+﻿namespace WebApiCitas.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class NotificationRequest
     {
         public string RecipientEmail { get; set; }

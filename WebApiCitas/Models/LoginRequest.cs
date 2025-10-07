@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WebApiCitas.Models
+﻿namespace WebApiCitas.Models
 {
     /// <summary>
     /// Representa la solicitud de login con usuario y clave.

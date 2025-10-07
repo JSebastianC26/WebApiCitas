@@ -49,7 +49,6 @@ namespace WebApiCitas.Repositorios
             catch (Exception ex)
             {
                 Console.WriteLine($"[Email] Error: {ex.Message}");
-                throw;
             }
         }
     }

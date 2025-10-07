@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -11,8 +10,9 @@ using WebApiCitas.Models;
 namespace WebApiCitas.Controllers
 {
     /// <summary>
-    /// 
+    /// Servicio orquestador principal
     /// </summary>
+    [Authorize]
     [RoutePrefix("api")]
     public class AppointmentCoordinatorController : ApiController
     {

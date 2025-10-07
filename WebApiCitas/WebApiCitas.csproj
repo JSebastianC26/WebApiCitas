@@ -306,7 +306,6 @@
     <Compile Include="Services\PublishAsync.cs" />
     <Compile Include="Services\TokenGenerator.cs" />
     <Compile Include="Services\TokenValidationHandler.cs" />
-    <Compile Include="Source\ValidarCredencialesVirtuales.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
